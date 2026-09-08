@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Lucas Moraes Mirabeau — Senior Machine Learning Engineer."
+    />
+    <title>Lucas Moraes Mirabeau — Machine Learning Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="#top" data-bind="shortName">LM</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero" aria-labelledby="hero-name">
+        <div class="hero-atmosphere" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-inner reveal hero-reveal">
+          <p class="hero-label" data-bind="location">Rio de Janeiro, Brazil</p>
+          <h1 id="hero-name" class="hero-name" data-bind="name">
+            Lucas Moraes Mirabeau
+          </h1>
+          <p class="hero-title" data-bind="title">
+            Senior Machine Learning Engineer
+          </p>
+          <p class="hero-tagline" data-bind="tagline"></p>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              data-bind-href="linkedin"
+              href="https://www.linkedin.com/in/lucas-moraes-mirabeau-2b9159123/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View LinkedIn</a
+            >
+            <a class="btn btn-ghost" href="#projects">See projects</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about reveal" aria-labelledby="about-heading">
+        <div class="section-inner">
+          <p class="section-eyebrow">About</p>
+          <h2 id="about-heading">Building applied intelligence</h2>
+          <p class="about-text" data-bind="about"></p>
+          <p class="about-meta">
+            <span data-bind="education"></span>
+          </p>
+          <ul class="skills" data-bind-list="skills" aria-label="Skills"></ul>
+        </div>
+      </section>
+
+      <section
+        id="experience"
+        class="section experience reveal"
+        aria-labelledby="experience-heading"
+      >
+        <div class="section-inner">
+          <p class="section-eyebrow">Experience</p>
+          <h2 id="experience-heading">Where I’ve worked</h2>
+          <ol class="timeline" data-bind-experiences></ol>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="section projects reveal"
+        aria-labelledby="projects-heading"
+      >
+        <div class="section-inner">
+          <p class="section-eyebrow">Projects</p>
+          <h2 id="projects-heading">Selected work</h2>
+          <ul class="project-list" data-bind-projects></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>
+          <span data-bind="name">Lucas Moraes Mirabeau</span>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <span data-bind="title">Senior Machine Learning Engineer</span>
+        </p>
+        <a
+          data-bind-href="linkedin"
+          href="https://www.linkedin.com/in/lucas-moraes-mirabeau-2b9159123/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
+
+    <script src="content.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
