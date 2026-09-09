@@ -47,7 +47,7 @@ window.siteContent = {
       role: "Machine Learning Engineer",
       location: "Rio de Janeiro, Brazil",
       start: "Aug 2024",
-      end: "Feb 2025",
+      end: "Present",
       bullets: [
         "Owned end-to-end data pipelines for a large agricultural engagement — warehouse ingestion through Airflow to downstream applications.",
         "Built and maintained Flask-based services that run fine-tuning and machine learning workloads.",
@@ -81,17 +81,18 @@ window.siteContent = {
   ],
   projects: [
     {
-      name: "Datahub",
-      period: "Apr 2024 – Present",
-      summary:
-        "Collecting data from different sources at a multinational agronomical company and transforming it for several business areas, while refactoring existing ML applications to fit the newer architectures.",
-      tech: ["Data pipelines", "Apache Airflow", "ML", "Python", "Agriculture"],
-    },
-    {
       name: "AgentSpace",
+      period: "Aug 2025 - Present",
       summary:
         "Creating an AgentSpace and accompanying agents — a network of interconnected specialized agents that communicate with each other and external systems to optimize existing workflows and help managers take informed decisions.",
       tech: ["Generative AI", "Multi-agent systems", "APIs", "Python"],
+    },
+    {
+      name: "Datahub",
+      period: "Apr 2024 – Aug 2025",
+      summary:
+        "Collecting data from different sources at a multinational agronomical company and transforming it for several business areas, while refactoring existing ML applications to fit the newer architectures.",
+      tech: ["Data pipelines", "Apache Airflow", "ML", "Python", "Agriculture"],
     },
     {
       name: "Funnel Edge Chatbot with Twilio and IBM",
