@@ -70,7 +70,7 @@ window.siteContent = {
       company: "MJV Technology & Innovation",
       role: "Data Scientist",
       location: "Brazil",
-      start: "~2020",
+      start: "2020",
       end: "2023",
       bullets: [
         "Developed recommendation systems, clustering, and other supervised and unsupervised learning solutions.",
