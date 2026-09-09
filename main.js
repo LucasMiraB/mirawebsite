@@ -27,6 +27,21 @@
       el.href = content.links.linkedin;
     });
 
+    if (content.links.email) {
+      setText('[data-bind="email"]', content.links.email);
+      document.querySelectorAll("[data-bind-href=\"email\"]").forEach(function (el) {
+        el.href = "mailto:" + content.links.email;
+      });
+    }
+
+    if (content.links.whatsapp) {
+      const wa = String(content.links.whatsapp).replace(/\D/g, "");
+      setText('[data-bind="whatsapp"]', formatWhatsApp(content.links.whatsapp));
+      document.querySelectorAll("[data-bind-href=\"whatsapp\"]").forEach(function (el) {
+        el.href = "https://wa.me/" + wa;
+      });
+    }
+
     document.title = content.name + " — " + content.title;
 
     const meta = document.querySelector('meta[name="description"]');
@@ -36,6 +51,21 @@
         "Portfolio of " + content.name + " — " + content.title + "."
       );
     }
+  }
+
+  function formatWhatsApp(raw) {
+    const digits = String(raw).replace(/\D/g, "");
+    if (digits.length === 13 && digits.startsWith("55")) {
+      return (
+        "+55 " +
+        digits.slice(2, 4) +
+        " " +
+        digits.slice(4, 9) +
+        "-" +
+        digits.slice(9)
+      );
+    }
+    return "+" + digits;
   }
 
   function initials(name) {
@@ -125,6 +155,13 @@
       name.textContent = project.name;
       left.appendChild(name);
 
+      if (project.period) {
+        const period = document.createElement("p");
+        period.className = "project-period";
+        period.textContent = project.period;
+        left.appendChild(period);
+      }
+
       const right = document.createElement("div");
       const summary = document.createElement("p");
       summary.className = "project-summary";
@@ -182,9 +219,83 @@
     });
   }
 
+  function initContactModal() {
+    const modal = document.getElementById("contact-modal");
+    if (!modal) return;
+
+    let lastFocus = null;
+    let openTimer = null;
+
+    function getFocusable() {
+      return Array.prototype.slice.call(
+        modal.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        )
+      );
+    }
+
+    function openModal() {
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      window.requestAnimationFrame(function () {
+        modal.classList.add("is-open");
+      });
+      const closeBtn = modal.querySelector(".contact-modal-close");
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      document.body.style.overflow = "";
+      window.clearTimeout(openTimer);
+      openTimer = window.setTimeout(function () {
+        modal.hidden = true;
+        if (lastFocus && typeof lastFocus.focus === "function") {
+          lastFocus.focus();
+        }
+      }, 280);
+    }
+
+    document.querySelectorAll("[data-open-contact]").forEach(function (el) {
+      el.addEventListener("click", openModal);
+    });
+
+    modal.querySelectorAll("[data-close-contact]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (modal.hidden) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = getFocusable();
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
   renderBasics();
   renderSkills();
   renderExperiences();
   renderProjects();
   initMotion();
+  initContactModal();
 })();

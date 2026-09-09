@@ -109,8 +109,21 @@ a:hover {
   color: var(--text-muted);
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav-contact:hover {
   color: var(--text);
+}
+
+.nav-contact {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
 }
 
 /* Hero */
@@ -204,6 +217,7 @@ a:hover {
   text-decoration: none;
   border-radius: var(--radius);
   border: 1px solid transparent;
+  cursor: pointer;
   transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
     color 0.2s var(--ease);
 }
@@ -399,6 +413,13 @@ a:hover {
   line-height: 1.2;
 }
 
+.project-period {
+  margin: 0.4rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .project-summary {
   margin: 0;
   color: var(--text-muted);
@@ -442,19 +463,167 @@ a:hover {
   color: var(--text-muted);
 }
 
-.footer-inner a {
+.footer-inner a,
+.footer-links button {
   font-weight: 600;
   color: #c5d8e8;
   text-decoration: none;
 }
 
-.footer-inner a:hover {
+.footer-inner a:hover,
+.footer-links button:hover {
   color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.footer-links button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
 }
 
 .footer-sep {
   margin: 0 0.4rem;
   opacity: 0.5;
+}
+
+/* Contact modal */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space);
+}
+
+.contact-modal[hidden] {
+  display: none;
+}
+
+.contact-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 16, 0.72);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.contact-modal.is-open .contact-modal-backdrop {
+  opacity: 1;
+}
+
+.contact-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 26rem);
+  padding: 1.75rem 1.5rem 1.5rem;
+  background:
+    radial-gradient(ellipse 90% 70% at 10% 0%, rgba(61, 126, 166, 0.2), transparent 55%),
+    var(--bg-elevated);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  transform: translateY(0.75rem) scale(0.98);
+  opacity: 0;
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease);
+}
+
+.contact-modal.is-open .contact-modal-panel {
+  opacity: 1;
+  transform: none;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-modal-close:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.contact-modal-panel .section-eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.contact-modal-panel h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.contact-modal-copy {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.contact-options {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.contact-option {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.95rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(26, 35, 48, 0.65);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.contact-option:hover {
+  color: var(--text);
+  border-color: rgba(61, 126, 166, 0.55);
+  background: var(--accent-soft);
+}
+
+.contact-option-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact-option-value {
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-word;
 }
 
 /* Motion */
@@ -500,6 +669,11 @@ a:hover {
 
   .timeline.is-drawn::before {
     animation: none;
+  }
+
+  .contact-modal-backdrop,
+  .contact-modal-panel {
+    transition: none;
   }
 }
 

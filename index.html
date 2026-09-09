@@ -26,6 +26,9 @@
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <button type="button" class="nav-contact" data-open-contact>
+            Contact
+          </button>
         </nav>
       </div>
     </header>
@@ -44,15 +47,17 @@
           </p>
           <p class="hero-tagline" data-bind="tagline"></p>
           <div class="hero-actions">
+            <button type="button" class="btn btn-primary" data-open-contact>
+              Get in touch
+            </button>
             <a
-              class="btn btn-primary"
+              class="btn btn-ghost"
               data-bind-href="linkedin"
               href="https://www.linkedin.com/in/lucas-moraes-mirabeau-2b9159123/"
               target="_blank"
               rel="noopener noreferrer"
               >View LinkedIn</a
             >
-            <a class="btn btn-ghost" href="#projects">See projects</a>
           </div>
         </div>
       </section>
@@ -101,15 +106,68 @@
           <span class="footer-sep" aria-hidden="true">·</span>
           <span data-bind="title">Senior Machine Learning Engineer</span>
         </p>
-        <a
-          data-bind-href="linkedin"
-          href="https://www.linkedin.com/in/lucas-moraes-mirabeau-2b9159123/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
+        <div class="footer-links">
+          <button type="button" data-open-contact>Contact</button>
+          <a
+            data-bind-href="linkedin"
+            href="https://www.linkedin.com/in/lucas-moraes-mirabeau-2b9159123/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
       </div>
     </footer>
+
+    <div
+      class="contact-modal"
+      id="contact-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <div class="contact-modal-backdrop" data-close-contact tabindex="-1"></div>
+      <div class="contact-modal-panel" role="document">
+        <button
+          type="button"
+          class="contact-modal-close"
+          data-close-contact
+          aria-label="Close contact options"
+        >
+          ×
+        </button>
+        <p class="section-eyebrow">Contact</p>
+        <h2 id="contact-modal-title">Get in touch</h2>
+        <p class="contact-modal-copy">
+          Reach out by email or WhatsApp — I’ll get back to you soon.
+        </p>
+        <div class="contact-options">
+          <a
+            class="contact-option"
+            data-bind-href="email"
+            href="mailto:lucasmirabeau@gmail.com"
+          >
+            <span class="contact-option-label">Email</span>
+            <span class="contact-option-value" data-bind="email"
+              >lucasmirabeau@gmail.com</span
+            >
+          </a>
+          <a
+            class="contact-option"
+            data-bind-href="whatsapp"
+            href="https://wa.me/5521997175577"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-option-label">WhatsApp</span>
+            <span class="contact-option-value" data-bind="whatsapp"
+              >+55 21 99717-5577</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
 
     <script src="content.js"></script>
     <script src="main.js"></script>

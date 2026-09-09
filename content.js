@@ -81,25 +81,43 @@ window.siteContent = {
   ],
   projects: [
     {
-      name: "Generative AI microservices",
+      name: "Datahub",
+      period: "Apr 2024 – Present",
       summary:
-        "Production GenAI initiatives delivered from early 2023 onward: API- and microservice-based integrations designed for safe operation in regulated environments, with explicit attention to LGPD guidelines.",
-      tech: ["Generative AI", "APIs", "Microservices", "LGPD", "Python"],
+        "Collecting data from different sources at a multinational agronomical company and transforming it for several business areas, while refactoring existing ML applications to fit the newer architectures.",
+      tech: ["Data pipelines", "Apache Airflow", "ML", "Python", "Agriculture"],
     },
     {
-      name: "Agricultural ML data platform",
+      name: "AgentSpace",
       summary:
-        "End-to-end pipeline for a large agricultural company: warehouse ingestion with Airflow, Flask applications for fine-tuning and model execution, and ongoing maintenance of the full data path.",
-      tech: ["Apache Airflow", "Flask", "Fine-tuning", "Data pipelines", "ML"],
+        "Creating an AgentSpace and accompanying agents — a network of interconnected specialized agents that communicate with each other and external systems to optimize existing workflows and help managers take informed decisions.",
+      tech: ["Generative AI", "Multi-agent systems", "APIs", "Python"],
     },
     {
-      name: "Recommendation & decision systems",
+      name: "Funnel Edge Chatbot with Twilio and IBM",
+      period: "Sep 2023 – Mar 2024",
       summary:
-        "Recommendation, clustering, and classical ML systems for business use cases, including optimization models for financial domains and cloud-backed deployments on AWS and GCP.",
-      tech: ["Recommendations", "Clustering", "AWS", "GCP", "Python"],
+        "Using IBM watsonx Assistant to build a chatbot that increases sales conversion on a car insurance platform through a seamless chat flow and WhatsApp (Twilio).",
+      tech: ["watsonx Assistant", "IBM", "Twilio", "WhatsApp", "Generative AI"],
+    },
+    {
+      name: "Portfolio Optimization",
+      period: "Jul 2023 – Oct 2023",
+      summary:
+        "Built for a credit institution seeking the optimal investment for each financial product, including several recommendation paths and intermediary steps toward each partial target.",
+      tech: ["Optimization", "Recommendations", "Python", "Finance"],
+    },
+    {
+      name: "AI Augmented Credit Analysis",
+      period: "Dec 2020 – Nov 2021",
+      summary:
+        "Ensemble of prediction algorithms working alongside a bank’s credit analysis process so the institution could expand scope and handle more credit requests.",
+      tech: ["Ensemble models", "Credit risk", "Python", "Banking"],
     },
   ],
   links: {
     linkedin: "https://www.linkedin.com/in/lucas-moraes-mirabeau-2b9159123/",
+    email: "lucasmirabeau@gmail.com",
+    whatsapp: "5521997175577",
   },
 };
