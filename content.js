@@ -68,7 +68,7 @@ window.siteContent = {
     },
     {
       company: "MJV Technology & Innovation",
-      role: "Data Scientist (Pleno / Junior)",
+      role: "Data Scientist",
       location: "Brazil",
       start: "~2020",
       end: "2023",
