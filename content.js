@@ -9,9 +9,9 @@ window.siteContent = {
   location: "Rio de Janeiro, Brazil",
   tagline:
     "Designing, training, and shipping ML systems — from data pipelines to production GenAI services.",
-  education: "Computer Engineering, UVA (Brazil)",
+  education: "Computer Engineering Bachelor's, UVA (Brazil)",
   about:
-    "Computer engineer with hands-on data science experience since before graduation. I build recommendation and clustering systems, supervised and unsupervised models, and optimization solutions for financial domains. Since early 2023 I have delivered Generative AI projects in production environments using APIs and microservices, with a strong focus on LGPD-safe design. My work spans data engineering on AWS and Google Cloud, pipelines with Apache Airflow and RabbitMQ, and model deployment via API Gateway, Lambda, SNS, FastAPI, and Flask. For monitoring and storytelling I use Looker Studio, Power BI, Tableau, and Python visualization libraries.",
+    "Computer engineer with ample data science, data engineering and machine learning engineering experience. I build recommendation and clustering systems, supervised and unsupervised models, and optimization solutions for financial domains. Since early 2023 I have delivered Generative AI projects in production environments using APIs and microservices, with a strong focus on LGPD-safe design. My work spans data engineering on AWS and Google Cloud, pipelines with Apache Airflow and RabbitMQ, and model deployment via API Gateway, Lambda, SNS, FastAPI, and Flask. For monitoring and storytelling I use Looker Studio, Power BI, Tableau, and Python visualization libraries.",
   skills: [
     "Python",
     "Machine Learning",
